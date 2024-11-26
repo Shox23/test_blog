@@ -1,6 +1,6 @@
 <template>
-  <div class="container p-8 flex flex-col gap-4" v-if="filteredPostList.length">
-    <Card v-for="item in filteredPostList" :key="item.id">
+  <div class="container p-8 flex flex-col gap-4" v-if="visiblePostList.length">
+    <Card v-for="item in visiblePostList" :key="item.id">
       <CardHeader>
         <RouterLink :to="`/post/${item.id}`">
           <CardTitle>{{ item.title }}</CardTitle>
@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { fetchPosts, filteredPostList, loadMorePosts } from "@/utils/usePosts";
+import { fetchPosts, loadMorePosts, visiblePostList } from "@/utils/usePosts";
 import { onBeforeMount, onUnmounted } from "vue";
 
 import {
