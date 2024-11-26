@@ -3,7 +3,7 @@
     <div class="container">
       <div class="flex sm:flex-row flex-col items-center gap-2 md:gap-4">
         <Input
-          v-model="searchValue"
+          @update:model-value="searchPost"
           placeholder="Search post"
           v-if="route.fullPath === '/'"
         />
@@ -94,7 +94,7 @@ import {
   authorList,
   categoryList,
   filterPosts,
-  searchValue,
+  searchPost,
   sortPosts,
 } from "@/utils/usePosts";
 

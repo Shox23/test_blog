@@ -1,5 +1,8 @@
 <template>
-  <div class="container p-8 flex flex-col gap-4" v-if="visiblePostList.length">
+  <div
+    class="container p-8 flex flex-col gap-4 overflow-y-auto"
+    v-if="visiblePostList.length"
+  >
     <Card v-for="item in visiblePostList" :key="item.id">
       <CardHeader>
         <RouterLink :to="`/post/${item.id}`">
